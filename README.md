@@ -30,3 +30,7 @@ End Sub
 ```
 
 Currently this is bound to the same limitations as other icons represented by the eVB ImageList, most notably, transparency is not allowed.
+
+## Screenshots
+
+![Screenshot showing the example application. To demonstrate functionality, the application icon is visible in the Windows taskbar.](https://raw.githubusercontent.com/WinCEDev/eVB-Taskbar-Icon/main/Screenshots/CAPT0000.png?raw=1)
