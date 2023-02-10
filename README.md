@@ -4,7 +4,7 @@ This module enables your eVB application to have an icon in the Windows CE taskb
 
 ## Usage
 
-Usage is very simple, just add the module and an ImageList to your project and add the image(s) to the ImageList as per normal. Add a form-level variable to hold the icon(s), and then call the `TaskbarIcon_Let` function from Form_Load or anytime you want to change the icon. When your application ends, make sure to call `TaskbarIcon_Destroy` specifying the variables you created to hold the icons to allow Windows to free them from memory.
+Usage is very simple, just add the module and an ImageList to your project and add the image(s) to the ImageList as per normal. Add a form-level variable to hold the icon(s), and then call the `TaskbarIcon_Let` function from `Form_Load` or anytime you want to change the icon. When your application ends, make sure to call `TaskbarIcon_Destroy` specifying the variables you created to hold the icons to allow Windows to free them from memory.
 
 A complete application could look like this:
 
