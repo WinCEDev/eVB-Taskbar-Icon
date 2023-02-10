@@ -1,0 +1,73 @@
+VERSION 5.00
+Object = "{E491F001-98EC-11D1-9B3D-00C04FAD5AEC}#1.0#0"; "msceimagelist.dll"
+Begin VB.Form frmMain 
+   BorderStyle     =   3  'Fixed Dialog
+   Caption         =   "Taskbar Icon Example"
+   ClientHeight    =   1335
+   ClientLeft      =   -15
+   ClientTop       =   270
+   ClientWidth     =   2655
+   ScaleHeight     =   1335
+   ScaleWidth      =   2655
+   ShowInTaskbar   =   0   'False
+   Begin CEImageListCtl.ImageList ImageList 
+      Left            =   0
+      Top             =   0
+      _cx             =   990
+      _cy             =   990
+      ImageWidth      =   0
+      ImageHeight     =   0
+   End
+   Begin VBCE.CommandButton cmdQuit 
+      Height          =   375
+      Left            =   120
+      TabIndex        =   0
+      Top             =   480
+      Width           =   2415
+      _cx             =   4260
+      _cy             =   661
+      Appearance      =   1
+      BackColor       =   -2147483633
+      Caption         =   "&Quit"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+End
+Attribute VB_Name = "frmMain"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Private LargeIcon As Long
+
+Private SmallIcon As Long
+
+Private Sub Form_Load()
+    ImageList.Add PathHelpers_AddPathSeparator(App.Path) & "icon_small.bmp"
+    ImageList.Add PathHelpers_AddPathSeparator(App.Path) & "icon_large.bmp"
+    
+    SmallIcon = TaskbarIcon_Let(hwnd, ImageList.hImageList, 0, tbSmallIcon)
+    LargeIcon = TaskbarIcon_Let(hwnd, ImageList.hImageList, 1, tbLargeIcon)
+End Sub
+
+Private Sub Form_Unload(Cancel As Integer)
+    TaskbarIcon_Destroy LargeIcon
+    TaskbarIcon_Destroy SmallIcon
+End Sub
+
+Private Sub cmdQuit_Click()
+    TaskbarIcon_Destroy LargeIcon
+    TaskbarIcon_Destroy SmallIcon
+    App.End
+End Sub
