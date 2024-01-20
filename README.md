@@ -33,7 +33,7 @@ Currently this is bound to the same limitations as other icons represented by th
 
 ## Screenshots
 
-![Screenshot showing the example application. To demonstrate functionality, the application icon is visible in the Windows taskbar.](https://raw.githubusercontent.com/WinCEDev/eVB-Taskbar-Icon/main/Screenshots/CAPT0000.png?raw=1)
+![Screenshot showing the example application. To demonstrate functionality, the application icon is visible in the Windows taskbar.](https://github.com/WinCEDev/eVB-Taskbar-Icon/blob/main/Screenshots/CAPT0000.png?raw=1)
 
 ## Links
 
